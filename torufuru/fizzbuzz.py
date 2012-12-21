@@ -7,8 +7,9 @@ def fizzbuzz(i):
             fb = "fizz"
         elif i % 5 == 0:
             fb = "buzz"
-
-        print "%s: %s" % (i, fb)
+        else:
+            fb = str(i)
+        print fb
 
 if __name__ == '__main__':
     import sys
