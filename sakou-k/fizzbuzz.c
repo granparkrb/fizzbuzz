@@ -1,9 +1,8 @@
 #include <stdio.h>
-int
-main(int ac,char** av)
+int main(int ac,char** av)
 {
 	int i;
-	for(i=1;i<255;i++){
+	for( i = 1;i < 255;i++){
 		if( i % 3 == 0 && i % 5 == 0){
 			printf("fizz buzz\n");
 		} else if ( i % 3 == 0 ){
@@ -14,4 +13,5 @@ main(int ac,char** av)
 			printf("%d\n",i);
 		}
 	}
+	return 0;
 }
