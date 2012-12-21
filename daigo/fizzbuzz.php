@@ -3,13 +3,24 @@
 // ex) $ php fizzbuzz.php 10
 //     $ buzz
 
-$num = $argv[1];
+class FizzBuzz {
+    public function main ($num)
+    {
+        $output = '';
 
-if ( ($num % 3) == 0 ) {
-    echo "fizz ";
-}
-if ( ($num % 5) == 0 ) {
-    echo "buzz ";
-}
-echo "\r\n";
+        if ( ($num % 3) == 0 ) {
+            $output .= "fizz";
+        }
+        if ( ($num % 5) == 0 ) {
+            $output .= "buzz";
+        }
+        if ( empty($output) ) {
+            $output .= $num;
+        }
 
+        return $output . "\r\n";
+    }
+}
+
+$fizz_buzz = new FizzBuzz();
+echo $fizz_buzz->main($argv[1]);
