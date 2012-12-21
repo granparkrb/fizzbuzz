@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require File.expand_path('./lib/fizzbuzz')
+
+f = Fiber.new do
+  i = 0
+  loop do
+    puts Fizzbuzz.exec(i)
+    i += 1
+    Fiber.yield
+  end
+end
+
+100.times { f.resume }
