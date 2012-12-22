@@ -12,11 +12,14 @@ end
 
 class String
   def +(other)
-    self << other.to_s
+    if !empty? && other.is_a?(Integer)
+      self
+    else
+      self << other.to_s
+    end
   end
 end
 
 1.upto(100) do |i|
-  s = (i%3==0 && "Fizz") + (i%5==0 && "Buzz")
-  puts s.empty? ? i : s
+  puts (i%3==0 && "Fizz") + (i%5==0 && "Buzz") + i
 end
